@@ -95,4 +95,11 @@ month (330 postings):
 
 ## Why this exists
 
-Built as a portfolio piece for AI-agent engineering roles: it demonstrates MCP tool design, a clean public-API integration, and structured outputs an agent can act on.
+HN's monthly "Who is hiring?" is one of the best places to find roles at serious
+engineering teams — but it's a single thread of **hundreds of free-text comments with
+no search and no filters**. Finding the few postings that actually fit you (your stack,
+remote, salary, visa, seniority) means scrolling for ages and reading every one.
+
+This server turns that thread into a **structured, queryable dataset** so a job seeker
+(or their agent) can pull exactly the roles that match in seconds — with the stack,
+salary, location, and apply link already extracted.
