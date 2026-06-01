@@ -3,6 +3,7 @@ name = "hn-hiring-mcp"
 version = "0.1.0"
 description = "An MCP server that lets agents search Hacker News 'Who is hiring?' job posts."
 readme = "README.md"
+license = { text = "MIT" }
 requires-python = ">=3.10"
 dependencies = [
     "mcp>=1.2.0",
