@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Local app state (personal application tracking — not for the repo)
+applications.json
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
