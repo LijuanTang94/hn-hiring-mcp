@@ -4,6 +4,37 @@ An [MCP](https://modelcontextprotocol.io) server that lets an AI agent (Claude D
 
 Data comes from Hacker News' public [Algolia API](https://hn.algolia.com/api) — no scraping, no login, no ToS issues.
 
+## Example
+
+Ask Claude (or call the tool directly):
+
+> "Find remote or US-based AI roles paying $150k+ in this month's HN hiring thread."
+
+→ `search_jobs(roles="ai", location="remote, us", min_salary=150)` returns 29 of 330
+postings, each enriched and with a direct apply link:
+
+```jsonc
+{
+  "thread": "Ask HN: Who is hiring? (May 2026)",
+  "matched": 29,
+  "total_in_thread": 330,
+  "jobs": [
+    {
+      "headline": "Loophole Labs | Senior Systems Engineer | REMOTE (Americas & Europe) | $150k–195k USD + equity ...",
+      "level": ["senior"],
+      "location": "REMOTE (Americas & Europe)",
+      "stack": ["Go", "Rust", "Kubernetes"],
+      "salary_k": { "min": 150, "max": 195 },
+      "visa": false,
+      "company_type": ["Seed"],
+      "apply_url": "https://loopholelabs.io/careers",
+      "url": "https://news.ycombinator.com/item?id=47975670"
+    }
+    // ... 28 more
+  ]
+}
+```
+
 ## Tools
 
 | Tool | What it does |
@@ -54,7 +85,7 @@ Enrichment is **best-effort** parsing of free-text postings, validated against a
 month (330 postings):
 
 - **stack** — reliable (word-boundary matching; `go` won't match `google`).
-- **location** — extracted for ~75%; some free-text formats yield `null`, but the
+- **location** — extracted for ~87%; some free-text formats yield `null`, but the
   `location` filter matches the full posting text so filtering stays reliable.
 - **salary_k** — only ~28% of postings list pay. Parser ignores the `401(k)` plan and
   non-salary numbers (`100k users`, `50k MRR`, ...).
