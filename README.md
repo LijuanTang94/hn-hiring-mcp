@@ -69,8 +69,8 @@ Add this to `~/Library/Application Support/Claude/claude_desktop_config.json`
 {
   "mcpServers": {
     "hn-hiring": {
-      "command": "/Users/tlj/Desktop/open-source/hn-hiring-mcp/.venv/bin/python",
-      "args": ["/Users/tlj/Desktop/open-source/hn-hiring-mcp/server.py"]
+      "command": "/absolute/path/to/hn-hiring-mcp/.venv/bin/python",
+      "args": ["/absolute/path/to/hn-hiring-mcp/server.py"]
     }
   }
 }
